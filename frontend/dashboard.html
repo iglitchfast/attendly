@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attendly — Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <h2>Dashboard</h2>
+      <div>
+        <a href="today.html">Today's Classes</a>
+        <a href="timetable.html">Timetable</a>
+        <a href="setup.html">Setup</a>
+      </div>
+    </nav>
+
+    <div id="subject-grid" class="subject-grid"></div>
+
+    <h3 style="margin-top: 40px;">Days You Can Safely Take Off</h3>
+    <p>A day is fully safe only if every subject scheduled that day can still absorb the skip.</p>
+
+    <div id="safe-days-list" class="subject-grid"></div>
+  </div>
+
+  <script src="js/client.js"></script>
+  <script src="js/attendance-math.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

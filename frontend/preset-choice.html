@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attendly — Timetable Setup</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="form-card" style="max-width: 520px;">
+    <h2>How do you want to set up your timetable?</h2>
+
+    <div id="preset-options" style="margin-top: 20px;"></div>
+
+    <hr style="margin: 24px 0; border-color: var(--border);" />
+
+    <button type="button" id="manual-btn" class="btn-secondary" style="width: 100%;">
+      Manual Entry — I'll add subjects and timetable myself
+    </button>
+
+    <div class="error-text" id="error-msg"></div>
+  </div>
+
+  <script src="js/client.js"></script>
+  <script src="js/preset-choice.js"></script>
+</body>
+</html>

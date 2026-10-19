@@ -1,0 +1,220 @@
+/* Attendly — dark mode, plain CSS, no framework */
+
+:root {
+  --bg: #0a0a0c;
+  --card-bg: rgba(24, 24, 27, 0.6);
+  --border: #27272a;
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --accent: #10b981;      /* emerald — primary / safe */
+  --accent-hover: #059669;
+  --risky: #f59e0b;       /* amber */
+  --danger: #ef4444;      /* red */
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+p {
+  color: var(--text-secondary);
+  margin: 0 0 16px 0;
+}
+
+/* --- Forms --- */
+
+.form-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  max-width: 420px;
+  margin: 60px auto;
+  backdrop-filter: blur(12px);
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  margin-top: 16px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  background: #18181b;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+button {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #052e21;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.btn-link {
+  background: none;
+  color: var(--accent);
+  padding: 0;
+  text-decoration: underline;
+}
+
+.error-text {
+  color: var(--danger);
+  font-size: 13px;
+  margin-top: 8px;
+  min-height: 16px;
+}
+
+/* --- Subject cards / dashboard grid --- */
+
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.subject-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  backdrop-filter: blur(12px);
+}
+
+.subject-card.safe {
+  border-color: var(--accent);
+}
+
+.subject-card.risky {
+  border-color: var(--risky);
+}
+
+.subject-card.danger {
+  border-color: var(--danger);
+}
+
+.subject-card .percent {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.subject-card.safe .percent { color: var(--accent); }
+.subject-card.risky .percent { color: var(--risky); }
+.subject-card.danger .percent { color: var(--danger); }
+
+.subject-card .meta {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* --- Status badges (today view) --- */
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge.yes { background: rgba(16, 185, 129, 0.15); color: var(--accent); }
+.badge.risky { background: rgba(245, 158, 11, 0.15); color: var(--risky); }
+.badge.no { background: rgba(239, 68, 68, 0.15); color: var(--danger); }
+
+/* --- Timetable grid --- */
+
+.timetable-grid {
+  display: grid;
+  gap: 8px;
+  margin-top: 24px;
+  overflow-x: auto;
+}
+
+.timetable-cell {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.timetable-cell select {
+  padding: 4px;
+  font-size: 12px;
+}
+
+/* --- Nav --- */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+
+nav a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  margin-left: 16px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: var(--text-primary);
+}

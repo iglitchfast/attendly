@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attendly — Timetable</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <h2>Weekly Timetable</h2>
+      <div>
+        <a href="setup.html">Back to Setup</a>
+        <a href="dashboard.html">Dashboard</a>
+      </div>
+    </nav>
+
+    <p>Assign a subject to each period, Monday–Saturday. Changes save automatically as you pick them.</p>
+
+    <div id="timetable-grid" class="timetable-grid"></div>
+
+    <h3 style="margin-top: 40px;">Add a Working Day</h3>
+    <p>For a specific date that's normally off (e.g. a particular Saturday) but classes are happening — pick which weekday's timetable it should follow.</p>
+
+    <form id="working-day-form">
+      <label for="wd-date">Date</label>
+      <input type="date" id="wd-date" required />
+
+      <label for="wd-follows">Follows timetable for</label>
+      <select id="wd-follows" required>
+        <option value="0">Monday</option>
+        <option value="1">Tuesday</option>
+        <option value="2">Wednesday</option>
+        <option value="3">Thursday</option>
+        <option value="4">Friday</option>
+        <option value="5">Saturday</option>
+      </select>
+
+      <label for="wd-reason">Reason (optional)</label>
+      <input type="text" id="wd-reason" placeholder="e.g. Makeup class" />
+
+      <button type="submit" class="btn-secondary" style="margin-top: 16px;">Add Working Day</button>
+      <div class="error-text" id="wd-error-msg"></div>
+    </form>
+
+    <div id="working-day-list" style="margin-top: 16px;"></div>
+
+    <button id="done-btn" class="btn-primary" style="max-width: 200px; margin-top: 32px;">
+      Done — Go to Dashboard
+    </button>
+  </div>
+
+  <script src="js/client.js"></script>
+  <script src="js/timetable.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attendly — Setup Subjects</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <h2>Add Your Subjects</h2>
+      <div>
+        <a href="landing.html">Change Semester</a>
+      </div>
+    </nav>
+
+    <form id="setup-form">
+      <label for="baseline-date">Baseline date (as of when you're entering current attendance)</label>
+      <input type="date" id="baseline-date" required />
+
+      <div id="existing-subjects"></div>
+
+      <h3 style="margin-top: 32px;">Subjects</h3>
+      <p>Enter your current attendance snapshot for each subject, as of the baseline date above.</p>
+
+      <div id="subject-rows"></div>
+
+      <button type="button" id="add-row-btn" class="btn-secondary" style="margin-top: 12px;">
+        + Add another subject
+      </button>
+
+      <button type="submit" class="btn-primary">Save & Continue to Timetable</button>
+      <div class="error-text" id="error-msg"></div>
+    </form>
+  </div>
+
+  <script src="js/client.js"></script>
+  <script src="js/attendance-math.js"></script>
+  <script src="js/setup.js"></script>
+</body>
+</html>
